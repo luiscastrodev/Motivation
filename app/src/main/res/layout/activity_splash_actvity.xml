@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/purple_700"
     android:layout_height="match_parent"
     tools:context=".SplashActvity">
 
@@ -10,17 +11,19 @@
         android:text="Vamos Começar?"
         android:gravity="center"
         android:layout_margin="40dp"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/white"
         android:textSize="32sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />
 
 
-      <EditText
+      <androidx.appcompat.widget.AppCompatEditText
           android:layout_centerHorizontal="true"
+          android:id="@+id/edtName"
           android:layout_margin="10sp"
           android:textSize="28sp"
+          android:textColor="@color/white"
           android:layout_centerInParent="true"
           android:inputType="textCapWords"
           android:hint="Qual o seu nome? "
@@ -31,6 +34,7 @@
 
 
     <Button
+        android:id="@+id/buttonSave"
         android:text="Salvar"
         android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
