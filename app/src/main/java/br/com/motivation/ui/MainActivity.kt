@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         mSecurityPreferences = SecurityPreferences(this)
 
+        if (supportActionBar != null) {
+            supportActionBar!!.hide()
+        }
 
         textName.text =   mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
     }
