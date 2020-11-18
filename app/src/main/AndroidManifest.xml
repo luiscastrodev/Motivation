@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Motivation">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".ui.MainActivity"/>
 
-        <activity android:name=".SplashActvity">
+        <activity android:name=".ui.SplashActvity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
