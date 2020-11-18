@@ -4,7 +4,8 @@ import android.content.Context
 
 class SecurityPreferences(context: Context) {
 
-    private val mSharedPreferences = context.getSharedPreferences("motivation",Context.MODE_PRIVATE)
+    private val mSharedPreferences =
+        context.getSharedPreferences("motivation", Context.MODE_PRIVATE)
 
     fun storeString(key: String, value: String) {
         mSharedPreferences.edit().putString(key, value).apply();
@@ -12,6 +13,6 @@ class SecurityPreferences(context: Context) {
 
     fun getString(key: String): String {
 
-        return  "";
-     }
+        return mSharedPreferences.getString(key, "") ?: ""
+    }
 }
