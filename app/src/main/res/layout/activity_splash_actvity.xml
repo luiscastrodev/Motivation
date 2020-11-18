@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActvity">
+
+    <TextView
+        android:text="Vamos Começar?"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+
+      <EditText
+          android:layout_centerHorizontal="true"
+          android:hint="Qual o seu nome? "
+          android:gravity="center"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          tools:ignore="HardcodedText" />
+
+
+    <Button
+        android:text="Salvar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+</RelativeLayout>
