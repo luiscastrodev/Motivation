@@ -1,18 +1,22 @@
 package br.com.motivation.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import br.com.motivation.R
 import br.com.motivation.infra.MotivationConstants
 import br.com.motivation.infra.SecurityPreferences
+import br.com.motivation.repository.Mock
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_splash_actvity.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mSecurityPreferences: SecurityPreferences
+    private var phraseFilter : Int = MotivationConstants.PHRASEFILTER.ALL
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,7 +27,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             supportActionBar!!.hide()
         }
 
-        textName.text = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
+        val name = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
+        textName.text = "Olá , $name"
 
         buttonNewPhrase.setOnClickListener(this)
         imageAll.setOnClickListener(this)
@@ -54,18 +59,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.imageAll -> {
                 imageAll.setColorFilter(resources.getColor(R.color.purple_200))
+                phraseFilter = MotivationConstants.PHRASEFILTER.ALL
             }
             R.id.imageHappy -> {
                 imageHappy.setColorFilter(resources.getColor(R.color.purple_200))
-
+                phraseFilter = MotivationConstants.PHRASEFILTER.HAPPY
             }
             R.id.imageMorning -> {
                 imageMorning.setColorFilter(resources.getColor(R.color.purple_200))
-
+                phraseFilter = MotivationConstants.PHRASEFILTER.MORNING
             }
         }
     }
 
     private fun handleNewPhrase() {
+        textPhrase.text = Mock().getPhrase(phraseFilter)
     }
 }
